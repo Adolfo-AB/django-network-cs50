@@ -1,0 +1,38 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<div id="all-posts-view">
+    <div class="container-fluid">
+        <h2><strong>All Posts</strong></h2>
+    </div>
+
+    {% if user.is_authenticated %}
+        <div id="new-post">
+        </div>
+    {% endif %}
+    <hr>
+    <div id="all-posts-container" class="container"></div>
+</div>
+
+<div id="following-posts-view">
+    <div class="container-fluid">
+        <h2><strong>Following</strong></h2>
+        <div id="following-posts-container" class="container"></div>
+    </div>
+</div>
+
+<div id="profile-view">
+    <div id ="profile-container" class="container-fluid">
+        <h2 id ="profile-header"></h2>
+        <div id="follow-container" class="container-fluid"></div>
+        <div id="profile-posts-container" class="container"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/index.js' %}"></script>
+{% endblock %}
